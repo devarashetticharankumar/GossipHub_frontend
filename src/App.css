@@ -1,0 +1,114 @@
+/* C:\Users\devar\OneDrive\Desktop\GossipHub\frontend\src\index.css */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap");
+
+/* Custom Hacking-Style Theme */
+@layer base {
+  :root {
+    --gray-950: #0f172a;
+    --green-900: #14532d;
+    --shadow-glow: 0 0 10px rgba(34, 197, 94, 0.5);
+  }
+
+  /* Monospace Font */
+  .font-mono {
+    font-family: "Fira Code", monospace;
+  }
+}
+
+@layer utilities {
+  /* Custom Colors */
+  .bg-gray-950 {
+    background-color: var(--gray-950);
+  }
+
+  .border-green-900 {
+    border-color: var(--green-900);
+  }
+
+  /* Custom Shadow */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Custom Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+
+  .animate-glitch {
+    animation: glitch 0.3s infinite;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Scanline Effect */
+.scanline {
+  position: relative;
+}
+.scanline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glitch Effect */
+.glitch:hover {
+  animation: glitch 0.3s infinite;
+}

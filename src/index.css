@@ -1,0 +1,24 @@
+@import "tailwindcss";
+.scanline {
+  position: relative;
+}
+.scanline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.glitch:hover {
+  animation: glitch 0.3s infinite;
+}
